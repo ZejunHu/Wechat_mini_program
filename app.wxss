@@ -1,0 +1,28 @@
+/**app.wxss**/
+
+.slide {
+  position: relative;
+  line-height: 73rpx;
+  font-size: 30rpx;
+  padding-left: 46rpx;
+}
+.slide::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 31rpx;
+  height: 43rpx;
+  width: 8rpx;
+  border-radius: 5rpx;
+  background-color: #ee2911;
+}
+.swiper {
+  height: 450rpx;
+}
+.swiper swiper {
+  height: 100%;
+}
+.swiper swiper .slide-image {
+  height: 100%;
+  width: 100%;
+}

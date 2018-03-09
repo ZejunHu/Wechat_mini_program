@@ -1,0 +1,73 @@
+<!--pages/detail/detail.wxml-->
+<view class="page">
+  <view class="nav">
+    <view class="nav-son {{shownavindex == 1? 'active' : ''}}" bindtap="listqy" data-nav="1">
+      <view class="content">Project</view>
+      <view class="icon"></view>
+    </view>
+    <view class="nav-son borders {{shownavindex == 2? 'active' : ''}}" data-nav="2">
+      <view class="content">
+        <view wx:if="{{ select1 }}">Structure</view>
+      </view>
+    </view>
+    <!-- <view class="nav-son {{shownavindex == 3? 'active' : ''}}" bindtap="listpx" data-nav="3">
+      <view class="content"></view>
+    </view> -->
+  </view>
+  <view class="quyu {{qyopen ? 'slidown' : 'slidup'}} {{qyshow ? 'disappear':''}}">
+    <view class="qy quyu-left">
+      <view class="{{select1 == index ? 'current' : ''}}" wx:for="{{structureleft}}" wx:key="unique" bindtap="selectleft" data-structure='{{index}}'>
+        {{index}}
+      </view>
+    </view>
+    <view class="qy quyu-center">
+      <view class="{{select2 == index ? 'current2' : ''}}" wx:for="{{structurecenter}}" wx:key="unique" bindtap="selectcenter" data-structure='{{index}}'>
+        {{index}}
+      </view>
+    </view>
+    <!-- <view class="qy quyu-right">
+      <view wx:for="{{cityright}}">
+        {{item}}
+      </view>
+    </view> -->
+  </view>
+  <view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}">
+    <view wx:for="{{content}}" wx:key="unique">
+      {{item}}
+    </view>
+  </view>
+  <view class="temp temp2 {{pxopen ? 'slidown' : 'slidup'}} {{pxshow ? 'disappear':''}}">
+    <view wx:for="{{content}}" wx:key="unique">
+      {{item}}
+    </view>
+  </view>
+  <view class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
+
+  <view wx:if="{{ structureSelected.id }}">
+    <view class='detail-block'>
+      <view class='sub-heading'>Building Structure</view>
+      <image src="{{ structureSelected.structure }}"></image>
+    </view>
+
+    <view class='detail-block'>
+      <view class='sub-heading'>Information</view>
+      <view class='structure-info'>{{ structureSelected.info }}</view>
+    </view>
+
+    <view class='detail-block'>
+      <view class='sub-heading'>Position</view>
+      <image src="{{ structureSelected.position }}"></image>
+    </view>
+
+    <view wx:if="{{ structureSelected.balcony }}" class='detail-block'>
+      <view class='sub-heading'>Balcony</view>
+      <image src="{{ structureSelected.balcony }}"></image>
+    </view>
+
+    <view style="margin-bottom: 80rpx"></view>
+  </view>
+  <view wx:else class='pre-info'>Please select building structure</view>
+
+  
+</view>
+<navigator url='../contact/contact'><button class="btn-detail">Contact Us</button></navigator>

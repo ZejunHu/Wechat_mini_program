@@ -1,0 +1,30 @@
+<!--pages/contact/contact.wxml-->
+<view class='container'>
+  <view class="contact">
+    <form bindsubmit="formSubmit">
+      <view class="field clearfix">
+        <label for="name">* Name</label>
+        <input id="name" name="name" class="form-input" type="text" placeholder="Please enter your name" />
+      </view>
+
+      <view class="field clearfix">
+        <label for="mail">* Email Address</label>
+        <input id="mail" name="mail"  class="form-input" type="text" placeholder="Please enter your email address" />
+      </view>
+
+      <view class="field clearfix">
+        <label for="phone">Phone Number</label>
+        <input id="phone" class="form-input" type="text" placeholder="Please enter your phone number" />
+      </view>
+
+      <view class="field clearfix">
+        <label for="message">Message</label>
+        <input id="message" name="message" class="form-input" type="text" placeholder="Do you have some messages want to leave" />
+      </view>
+
+      <button class="btn_submit"  formType="submit">Submit</button>
+
+    </form>
+
+  </view>
+</view>

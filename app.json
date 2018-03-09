@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/contact/contact"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#b99143",
+    "navigationBarTitleText": "Savvy Home",
+    "navigationBarTextStyle": "white"
+  }
+}

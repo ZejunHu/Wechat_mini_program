@@ -1,0 +1,39 @@
+<view class='container'>
+  <view class='swiper'>
+  <!-- <template is="carousel" data="{{ imgUrls }}"></template> -->
+    <swiper current="{{activeIndex}}" class="" indicator-dots="true" indicator-active-color="#fff" indicator-color="#b99143" bindchange="bindChange">
+      <block wx:for="{{ imgUrls }}" wx:key="unique">
+        <swiper-item>
+            <image src="{{ item }}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <scroll-view scroll-x="true" class="weui-navbar">
+     <block wx:for="{{tabs}}" wx:key="{{tabs.name}}">
+        <view id="{{index}}" class="{{activeIndex == index ?'item_on':''}} default-item" bindtap="tabClick" style="width:{{tabW}}px">
+          {{item}}
+        </view>
+      </block>
+   <view class="weui-navbar-slider" style="transform:translateX({{slideOffset}}px);"></view>
+  </scroll-view>
+
+  <swiper current="{{activeIndex}}" class="swiper-box" duration="500" bindchange="bindChange">
+    <swiper-item class="swiper-item">
+      <view class="slide-view">
+        <view>lumina</view>
+        <view>Info: This is lumina</view>
+      </view>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <view class="slide-view">
+        <view>ERA2</view>
+        <view>Info: This is ERA2</view>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <navigator url='../detail/detail'><button class="btn-detail">View detail</button></navigator>
+</view>
+
